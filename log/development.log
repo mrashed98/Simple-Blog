@@ -1,0 +1,1716 @@
+Started GET "/" for 127.0.0.1 at 2024-09-02 00:28:28 +0300
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/rashed/.gem/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/rashed/.gem/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 4.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-09-02 00:33:53 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/rashed/.gem/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/rashed/.gem/gems/railties-7.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.9ms | GC: 0.5ms)
+Completed 200 OK in 18ms (Views: 5.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 7.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 00:34:02 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticlesController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant ArticlesController)
+NameError (uninitialized constant ArticlesController)
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2024-09-02 00:34:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/articles" for ::1 at 2024-09-02 00:34:14 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticlesController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant ArticlesController)
+NameError (uninitialized constant ArticlesController)
+  
+Started GET "/favicon.ico" for ::1 at 2024-09-02 00:34:14 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 00:35:51 +0300
+  
+ActionController::RoutingError (uninitialized constant ArticlesController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant ArticlesController)
+NameError (uninitialized constant ArticlesController)
+  
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 00:38:46 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 834.2ms | GC: 46.1ms)
+Completed 200 OK in 855ms (Views: 835.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 46.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 00:38:48 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-09-01 22:11:22.238108', '2024-09-01 22:11:22.238110') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20240901214029)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240901214029') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Create (8.0ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Hello Rails"], ["body", "I am on Rails!"], ["created_at", "2024-09-01 22:13:20.548647"], ["updated_at", "2024-09-01 22:13:20.548647"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? /* loading for pp */ LIMIT ?[0m  [["id", 1], ["LIMIT", 11]]
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:17:36 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 6.5ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Articles</h1>
+<ul>
+    <% @articles.each do |article| %>
+    <li> <%= article.title %> </li>
+</ul>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/rashed/Personal/projects/ruby/blog/app/views/articles/index.html.erb:7: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+1:    <h1>Articles</h1>
+2:    <ul>
+3:        <% @articles.each do |article| %>
+4:        <li> <%= article.title %> </li>
+5:    </ul>
+  
+app/views/articles/index.html.erb:7: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:18:06 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (8.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 25.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.9ms | GC: 2.9ms)
+Completed 200 OK in 46ms (Views: 29.6ms | ActiveRecord: 13.4ms (1 query, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:18:06 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.3ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Create (5.1ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Loving Rails"], ["body", "In Love with developing with Rails"], ["created_at", "2024-09-01 22:18:51.190022"], ["updated_at", "2024-09-01 22:18:51.190022"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (4.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:18:59 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:18:59 +0300
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/up" for 127.0.0.1 at 2024-09-02 01:38:10 +0300
+Processing by Rails::HealthController#show as HTML
+  Rendering html template
+  Rendered html template (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/service-worker" for 127.0.0.1 at 2024-09-02 01:38:19 +0300
+Processing by Rails::PwaController#service_worker as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.6ms)
+
+
+  
+ActionView::MissingTemplate (Missing template pwa/service-worker with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/rashed/.gem/gems/railties-7.2.1/lib/rails/templates"
+  * "/Users/rashed/Personal/projects/ruby/blog/app/views"
+  * "/Users/rashed/.gem/gems/turbo-rails-2.0.6/app/views"
+  * "/Users/rashed/.gem/gems/actiontext-7.2.1/app/views"
+  * "/Users/rashed/.gem/gems/actionmailbox-7.2.1/app/views"
+):
+  
+actionview (7.2.1) lib/action_view/path_set.rb:42:in `find'
+actionview (7.2.1) lib/action_view/lookup_context.rb:131:in `find'
+actionview (7.2.1) lib/action_view/renderer/template_renderer.rb:49:in `determine_template'
+actionview (7.2.1) lib/action_view/renderer/template_renderer.rb:7:in `render'
+actionview (7.2.1) lib/action_view/renderer/renderer.rb:58:in `render_template_to_object'
+actionview (7.2.1) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+actionview (7.2.1) lib/action_view/rendering.rb:135:in `block in _render_template'
+actionview (7.2.1) lib/action_view/base.rb:308:in `in_rendering_context'
+actionview (7.2.1) lib/action_view/rendering.rb:134:in `_render_template'
+actionpack (7.2.1) lib/action_controller/metal/streaming.rb:258:in `_render_template'
+actionview (7.2.1) lib/action_view/rendering.rb:121:in `render_to_body'
+actionpack (7.2.1) lib/action_controller/metal/rendering.rb:186:in `render_to_body'
+actionpack (7.2.1) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (7.2.1) lib/abstract_controller/rendering.rb:29:in `render'
+actionpack (7.2.1) lib/action_controller/metal/rendering.rb:167:in `render'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block (2 levels) in render'
+/opt/homebrew/Cellar/ruby/3.3.3/lib/ruby/3.3.0/benchmark.rb:313:in `realtime'
+activesupport (7.2.1) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in render'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:101:in `cleanup_view_runtime'
+activerecord (7.2.1) lib/active_record/railties/controller_runtime.rb:46:in `cleanup_view_runtime'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:31:in `render'
+railties (7.2.1) lib/rails/pwa_controller.rb:9:in `service_worker'
+actionpack (7.2.1) lib/action_controller/metal/basic_implicit_render.rb:8:in `send_action'
+actionpack (7.2.1) lib/abstract_controller/base.rb:226:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/rendering.rb:193:in `process_action'
+actionpack (7.2.1) lib/abstract_controller/callbacks.rb:261:in `block in process_action'
+activesupport (7.2.1) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.6) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.6) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.2.1) lib/action_text/rendering.rb:25:in `with_renderer'
+actiontext (7.2.1) lib/action_text/engine.rb:71:in `block (4 levels) in <class:Engine>'
+activesupport (7.2.1) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.2.1) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.2.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.2.1) lib/abstract_controller/callbacks.rb:260:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/rescue.rb:27:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:77:in `block in process_action'
+activesupport (7.2.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (7.2.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.2.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (7.2.1) lib/action_controller/metal/instrumentation.rb:76:in `process_action'
+actionpack (7.2.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.2.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (7.2.1) lib/abstract_controller/base.rb:163:in `process'
+actionview (7.2.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (7.2.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (7.2.1) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (7.2.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (7.2.1) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (7.2.1) lib/action_dispatch/routing/route_set.rb:896:in `call'
+rack (3.1.7) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.7) lib/rack/etag.rb:29:in `call'
+rack (3.1.7) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.7) lib/rack/head.rb:15:in `call'
+actionpack (7.2.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.2.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.2.1) lib/active_record/migration.rb:674:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.7) lib/rack/method_override.rb:28:in `call'
+rack (3.1.7) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.7) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/mainfest" for 127.0.0.1 at 2024-09-02 01:38:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/mainfest"):
+  
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:42:47 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (3.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | GC: 0.4ms)
+Completed 200 OK in 38ms (Views: 16.2ms | ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:42:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/2" for 127.0.0.1 at 2024-09-02 01:43:02 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:43:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/" for 127.0.0.1 at 2024-09-02 01:44:32 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 14.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil):
+
+Causes:
+NoMethodError (undefined method `id' for nil)
+    2: <ul>
+    3:     <% @articles.each do |article| %>
+    4:     <li> 
+    5:         <a href="/articles/<%= @article.id %>"> 
+    6:             <%= @article.title %>
+    7:             </a>
+    8:      </li>
+  
+app/views/articles/index.html.erb:5
+app/views/articles/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2024-09-02 01:44:59 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | GC: 10.1ms)
+Completed 200 OK in 42ms (Views: 35.1ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 10.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:44:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:45:00 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.4ms)
+Completed 200 OK in 35ms (Views: 7.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:45:48 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 8.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:45:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:45:56 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.6ms)
+Completed 200 OK in 26ms (Views: 10.7ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:45:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:45:57 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:45:57 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2024-09-02 01:45:59 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:46:00 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:49:36 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `path' for an instance of Article):
+
+Causes:
+NoMethodError (undefined method `path' for an instance of Article)
+    2: <ul>
+    3:     <% @articles.each do |article| %>
+    4:     <li> 
+    5:         <a href="<%= article.path(article)%>"> 
+    6:             <%= article.title %>
+    7:             </a>
+    8:      </li>
+  
+app/views/articles/index.html.erb:5
+app/views/articles/index.html.erb:3
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:50:01 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | GC: 1.2ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:50:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/2" for 127.0.0.1 at 2024-09-02 01:50:02 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:50:02 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:50:03 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:51:16 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | GC: 4.4ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 4.4ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:51:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/2" for 127.0.0.1 at 2024-09-02 01:51:18 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 3.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:51:18 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:51:19 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 24.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:56:46 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles' for an instance of #<Class:0x0000000119fd2770>):
+
+Causes:
+NameError (undefined local variable or method `articles' for an instance of #<Class:0x0000000119fd2770>)
+     7: </p>
+     8: 
+     9: <a href="/articles"> <- Back To all articles </a>
+    10: <%= link_to "Back to all articles", articles%>
+  
+app/views/articles/show.html.erb:10
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:57:10 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 10.8ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | GC: 8.7ms)
+Completed 200 OK in 50ms (Views: 31.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 16.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:57:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:57:12 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.4ms)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:57:21 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 3.4ms)
+Completed 200 OK in 29ms (Views: 19.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 3.4ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 01:57:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 01:57:22 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | GC: 0.1ms)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2024-09-02 01:57:24 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.1ms)
+Completed 200 OK in 22ms (Views: 4.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 02:45:34 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | GC: 0.5ms)
+Completed 200 OK in 30ms (Views: 20.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 02:45:35 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:45:36 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_142720 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 15.7ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | GC: 1.3ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started POST "/articles/new" for 127.0.0.1 at 2024-09-02 02:45:53 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/articles/new"):
+  
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:45:53 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_142720 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 02:45:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  [1m[36mArticle Load (9.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 02:46:27 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-09-02 02:46:28 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-09-02 02:46:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:46:49 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_151320 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.3ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 1.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:49:29 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_159160 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:49:31 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_159160 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:52:20 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_167380 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:52:21 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_167380 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for 127.0.0.1 at 2024-09-02 02:52:22 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_167380 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/" for ::1 at 2024-09-02 02:52:47 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | GC: 0.8ms)
+Completed 200 OK in 39ms (Views: 22.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 02:52:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/new" for ::1 at 2024-09-02 02:53:00 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_176560 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2024-09-02 02:53:57 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_176560 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2024-09-02 02:54:08 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_184800 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2024-09-02 02:54:23 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_192720 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2024-09-02 02:54:23 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__587508651386610391_192720 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/" for ::1 at 2024-09-02 02:54:32 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.0ms | GC: 0.6ms)
+Completed 200 OK in 98ms (Views: 62.9ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 16.4ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 02:54:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/new" for ::1 at 2024-09-02 02:54:37 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb___1097127552019544171_23220 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 7.3ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | GC: 0.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    8:       <div><%= message %></div>
+    9:     <% end %>
+   10:   </div>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2024-09-02 02:55:06 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb___1097127552019544171_30740 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:      <% if @article.errors.any? %>
+    8:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    9:       <div><%= message %></div>
+   10:     <% end %>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2024-09-02 02:58:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__3332199201208870679_22260 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.8ms | GC: 2.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 3.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 13.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:      <% if @article.errors.any? %>
+    8:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    9:       <div><%= message %></div>
+   10:     <% end %>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/" for ::1 at 2024-09-02 02:58:41 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.6ms | GC: 6.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 82.1ms | GC: 21.4ms)
+Completed 200 OK in 98ms (Views: 81.0ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 22.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 02:58:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles/new" for ::1 at 2024-09-02 02:58:45 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_articles_new_html_erb__3332199201208870679_22260 at /Users/rashed/Personal/projects/ruby/blog/app/views/articles/new.html.erb:3)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+
+Causes:
+NoMethodError (undefined method `errors' for nil)
+    4:   <div>
+    5:     <%= form.label :title %><br>
+    6:     <%= form.text_field :title %>
+    7:      <% if @article.errors.any? %>
+    8:     <% @article.errors.full_messages_for(:title).each do |message| %>
+    9:       <div><%= message %></div>
+   10:     <% end %>
+  
+app/views/articles/new.html.erb:7
+app/views/articles/new.html.erb:3
+Started GET "/articles/new" for ::1 at 2024-09-02 02:59:36 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | GC: 11.1ms)
+Completed 200 OK in 50ms (Views: 30.0ms | ActiveRecord: 6.2ms (0 queries, 0 cached) | GC: 11.3ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 02:59:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/articles" for ::1 at 2024-09-02 03:00:00 +0300
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Rashed loves Yaya", "body"=>"Rashed Loved Yaya Since they were kids in school"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (3.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["title", "Rashed loves Yaya"], ["body", "Rashed Loved Yaya Since they were kids in school"], ["created_at", "2024-09-02 00:00:00.849185"], ["updated_at", "2024-09-02 00:00:00.849185"]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/3
+Completed 302 Found in 30ms (ActiveRecord: 6.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/3" for ::1 at 2024-09-02 03:00:00 +0300
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 6.3ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2024-09-02 03:00:01 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/articles" for ::1 at 2024-09-02 03:00:06 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/3" for ::1 at 2024-09-02 03:00:07 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 1.1ms)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/articles/new" for ::1 at 2024-09-02 03:10:14 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 7.2ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 1.0ms)
+Completed 200 OK in 34ms (Views: 18.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.1ms)
+
+
+Started POST "/articles" for ::1 at 2024-09-02 03:10:22 +0300
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "body"=>"Hello from the other side"}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 10.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 24ms (Views: 14.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2024-09-02 03:10:32 +0300
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Not Blacnk", "body"=>"Less"}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 15ms (Views: 6.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2024-09-02 03:10:39 +0300
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Not Blacnk", "body"=>""}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 18ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2024-09-02 03:10:44 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/3" for ::1 at 2024-09-02 03:15:41 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_article_path' for an instance of #<Class:0x000000012e259930>):
+
+Causes:
+NoMethodError (undefined method `destroy_article_path' for an instance of #<Class:0x000000012e259930>)
+    4: 
+    5: <ul>
+    6:   <li><%= link_to "Edit", edit_article_path(@article) %></li>
+    7:   <li><%= link_to "Delete", destroy_article_path(@article) %></li>
+    8: 
+    9: <li>
+   10:   <a href="/articles"> <- Back To all articles </a>
+  
+app/views/articles/show.html.erb:7
+Started GET "/articles/3" for ::1 at 2024-09-02 03:15:56 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.5ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 1.7ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 9.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `delete_article_path' for an instance of #<Class:0x00000001286dc080>):
+
+Causes:
+NoMethodError (undefined method `delete_article_path' for an instance of #<Class:0x00000001286dc080>)
+    4: 
+    5: <ul>
+    6:   <li><%= link_to "Edit", edit_article_path(@article) %></li>
+    7:   <li><%= link_to "Delete", delete_article_path(@article) %></li>
+    8: 
+    9: <li>
+   10:   <a href="/articles"> <- Back To all articles </a>
+  
+app/views/articles/show.html.erb:7
+Started GET "/articles/3" for ::1 at 2024-09-02 03:17:07 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.3ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%= @article.title %></h1>
+
+<p><%= @article.body %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Delete", article_path(@article), data {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+
+<li>
+  <a href="/articles"> <- Back To all articles </a>
+</li>
+</ul>
+
+
+
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (/Users/rashed/Personal/projects/ruby/blog/app/views/articles/show.html.erb:8: syntax error, unexpected ':', expecting '}'
+    turbo_method: :delete,
+                ^
+)
+1:    <h1><%= @article.title %></h1>
+2:    
+3:    <p><%= @article.body %></p>
+4:    
+5:    <ul>
+6:      <li><%= link_to "Edit", edit_article_path(@article) %></li>
+7:      <li><%= link_to "Delete", article_path(@article), data {
+8:        turbo_method: :delete,
+9:        turbo_confirm: "Are you sure?"
+10:      } %></li>
+11:    
+12:    <li>
+13:      <a href="/articles"> <- Back To all articles </a>
+14:    </li>
+15:    </ul>
+  
+app/views/articles/show.html.erb:8: syntax error, unexpected ':', expecting '}'
+Started GET "/articles/3" for ::1 at 2024-09-02 03:17:48 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 14.0ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 03:17:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles" for ::1 at 2024-09-02 03:17:49 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/3/edit" for ::1 at 2024-09-02 03:17:49 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article without an ID):
+  
+app/controllers/articles_controller.rb:24:in `edit'
+Started GET "/articles/3/edit" for ::1 at 2024-09-02 03:17:50 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Article without an ID):
+  
+app/controllers/articles_controller.rb:24:in `edit'
+Started GET "/articles/3/edit" for ::1 at 2024-09-02 03:18:09 +0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 18.5ms | GC: 1.4ms)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 19.3ms | GC: 1.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | GC: 1.4ms)
+Completed 200 OK in 45ms (Views: 31.6ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 03:18:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started PATCH "/articles/3" for ::1 at 2024-09-02 03:18:17 +0300
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"Rashed Hates Yaya", "body"=>"Rashed Loved Yaya Since they were kids in school"}, "commit"=>"Update Article", "id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[36mArticle Update (1.3ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "Rashed Hates Yaya"], ["updated_at", "2024-09-02 00:18:17.345154"], ["id", 3]]
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:29:in `update'
+Redirected to http://localhost:3000/articles/3
+Completed 302 Found in 36ms (ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/3" for ::1 at 2024-09-02 03:18:17 +0300
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles" for ::1 at 2024-09-02 03:18:19 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 16.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started DELETE "/articles/3?_method=delete" for ::1 at 2024-09-02 03:18:22 +0300
+Processing by ArticlesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:38:in `destroy'
+  [1m[36mArticle Destroy (1.1ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 16ms (ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2024-09-02 03:18:22 +0300
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 1.3ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20240902001943)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar, "body" text, "article_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_comments_on_article_id" ON "comments" ("article_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902001943') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/1" for ::1 at 2024-09-02 03:27:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:30
+  Rendered articles/show.html.erb within layouts/application (Duration: 30.0ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 55.1ms | GC: 14.3ms)
+Completed 200 OK in 78ms (Views: 58.3ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 14.4ms)
+
+
+Started POST "/articles/1/comments" for ::1 at 2024-09-02 03:28:06 +0300
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"Rashed", "body"=>"Rashed Was here saying hi"}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mComment Create (3.6ms)[0m  [1m[32mINSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["commenter", "Rashed"], ["body", "Rashed Was here saying hi"], ["article_id", 1], ["created_at", "2024-09-02 00:28:06.466687"], ["updated_at", "2024-09-02 00:28:06.466687"]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 42ms (ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 10.0ms)
+
+
+Started GET "/articles/1" for ::1 at 2024-09-02 03:28:06 +0300
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:30
+  Rendered articles/show.html.erb within layouts/application (Duration: 11.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 13.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/articles/1" for ::1 at 2024-09-02 03:28:34 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 23.0ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | GC: 0.5ms)
+Completed 200 OK in 55ms (Views: 32.8ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 03:28:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusToArticles (20240902003044)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "articles" ADD "status" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902003044') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddStatusToCommentss (20240902003054)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "commentsses" ADD "status" varchar[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusToCommentss (20240902003054)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "commentsses" ADD "status" varchar[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusToArticles (20240902003202)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "articles" ADD "status" varchar[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusToArticles (20240902003329)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "articles" ADD "status" varchar[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStatusToComments (20240902003330)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "comments" ADD "status" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240902003330') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/1" for ::1 at 2024-09-02 03:49:27 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ArgumentError (The :dependent option must be one of [:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception, :destroy_async], but is :distroy):
+  
+app/models/article.rb:3:in `<class:Article>'
+app/models/article.rb:1:in `<main>'
+app/controllers/articles_controller.rb:8:in `show'
+Started GET "/articles/1" for ::1 at 2024-09-02 03:49:50 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 2.5ms)
+
+
+  
+ActionView::Template::Error (Unknown validator: 'PressenceValidator'):
+
+Causes:
+ArgumentError (Unknown validator: 'PressenceValidator')
+NameError (uninitialized constant Comment::PressenceValidator)
+    16: 
+    17: 
+    18: <h2>Comments</h2>
+    19: <% @article.comments.each do |comment| %>
+    20:   <% unless comment.archived? %>
+    21:   <p>
+    22:     <strong>Commenter:</strong>
+  
+app/models/comment.rb:6:in `<class:Comment>'
+app/models/comment.rb:1:in `<main>'
+app/views/articles/show.html.erb:19
+Started GET "/articles/1" for ::1 at 2024-09-02 03:50:15 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:19
+  Rendered articles/show.html.erb within layouts/application (Duration: 41.5ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | GC: 1.6ms)
+Completed 200 OK in 76ms (Views: 52.8ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 4.1ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-09-02 03:50:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/articles" for ::1 at 2024-09-02 03:50:17 +0300
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/controllers/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.6ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | GC: 0.8ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/articles/new" for ::1 at 2024-09-02 03:50:18 +0300
+Processing by ArticlesController#new as HTML
+Filter chain halted as #<Proc:0x000000012e95ede8 /Users/rashed/.gem/gems/actionpack-7.2.1/lib/action_controller/metal/http_authentication.rb:82> rendered or redirected
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2024-09-02 03:50:23 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 7.2ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2024-09-02 03:50:24 +0300
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.1ms | GC: 0.0ms)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
